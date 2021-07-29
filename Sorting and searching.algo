@@ -1,0 +1,22 @@
+
+ALGORITHM Sorting_and_searching
+VAR
+    arr : ARRAY_OF INTEGER[12];
+    i,j,key:INTEGER;
+BEGIN
+
+    FOR i FROM 1 TO arr.length-1 STEP 1  DO 
+        key := arr[i];   
+        j := i-1;        
+        WHILE (j>=0 && arr[j]>key) DO 
+            arr[j+1] := arr[j]; 
+            j:= j-1;  
+        END_WHILE
+
+        arr[j+1] := key;    
+
+    END_FOR    
+
+    Write(arr);    
+
+END
